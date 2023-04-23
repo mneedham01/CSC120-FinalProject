@@ -16,7 +16,7 @@ public class Audio {
         this.EQ=EQ;
     }
 
-    
+    //methods-- will add exceptions/limits to all of these
     public void changePlaybackRate(Integer newPlaybackRate){
         this.playbackRate=newPlaybackRate;    
     }
