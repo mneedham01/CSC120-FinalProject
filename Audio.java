@@ -2,13 +2,13 @@
 public class Audio {
     
     String fileName;
-    Integer playbackRate;
-    Integer pitch; 
-    Integer reverb;
-    Integer EQ; 
+    Double playbackRate;
+    Double pitch; 
+    Double reverb;
+    Double EQ; 
 
     //constructor
-    public Audio(String fileName, Integer playbackRate, Integer pitch, Integer reverb, Integer EQ){
+    public Audio(String fileName, Double playbackRate, Double pitch, Double reverb, Double EQ){
         this.fileName=fileName;
         this.playbackRate=playbackRate;
         this.pitch=pitch;
@@ -17,19 +17,19 @@ public class Audio {
     }
 
     //methods-- will add exceptions/limits to all of these
-    public void changePlaybackRate(Integer newPlaybackRate){
+    public void changePlaybackRate(Double newPlaybackRate){
         this.playbackRate=newPlaybackRate;    
     }
 
-    public void changePitch(Integer newPitch){
+    public void changePitch(Double newPitch){
         this.pitch=newPitch;    
     }
 
-    public void changeReverb(Integer newReverb){
+    public void changeReverb(Double newReverb){
         this.reverb=newReverb;
     }
 
-    public void changeEQ(Integer newEQ){
+    public void changeEQ(Double newEQ){
         this.EQ=newEQ;
     }
 
