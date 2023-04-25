@@ -117,7 +117,7 @@ public class Game {
 
             if(userResponse.equals("1")){
                 playbackRateWitch playback=new playbackRateWitch();
-                playback.test();
+                playback.conversation(this.startFile);
             }
 
             if(userResponse.equals("2")){
