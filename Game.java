@@ -80,12 +80,16 @@ public class Game {
 
             acceptableResponses.add("goal");
             acceptableResponses.add("GOAL");
+            acceptableResponses.add("Goal");
             acceptableResponses.add("goal ");
             acceptableResponses.add("GOAL ");
+            acceptableResponses.add("Goal ");
             acceptableResponses.add("start");
             acceptableResponses.add("START");
+            acceptableResponses.add("Start");
             acceptableResponses.add("start ");
             acceptableResponses.add("START ");
+            acceptableResponses.add("Start ");
             acceptableResponses.add("1");
             acceptableResponses.add("2");
             acceptableResponses.add("3");
@@ -99,10 +103,10 @@ public class Game {
             }
 
             if (!acceptable){
-                throw new RuntimeException("This is not an accpetable responses. You can say 'GOAL','START', '1', '2', '3', or '4'.");
+                System.out.println("This is not an accpetable responses. You can say 'GOAL','START', '1', '2', '3', or '4'.");
             }
 
-            
+
         }
 
     }
