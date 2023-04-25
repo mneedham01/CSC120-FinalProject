@@ -4,6 +4,6 @@ import org.junit.Before;
 
 public class GameTest {
     Game newGame=new Game();
-        System.out.println(newGame.goalFile);
-        newGame.goalFile.printAudio();
+    System.out.println(newGame.goalFile);
+    newGame.goalFile.printAudio();
 }

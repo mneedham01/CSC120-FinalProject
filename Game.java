@@ -106,6 +106,11 @@ public class Game {
                 System.out.println("This is not an accpetable responses. You can say 'GOAL','START', '1', '2', '3', or '4'.");
             }
 
+            if(userResponse.equals("1")){
+                playbackRateWitch playback=new playbackRateWitch();
+                playback.test();
+            }
+
 
         }
 
