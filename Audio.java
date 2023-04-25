@@ -38,7 +38,7 @@ public class Audio {
         toReturn+="\nPlayback Rate: "+this.playbackRate;
         toReturn+="\nPitch: "+this.pitch;
         toReturn+="\nReverb: "+this.reverb;
-        toReturn+="\nEQ: "+this.EQ;
+        toReturn+="\nEQ: "+this.EQ+"\n";
         return toReturn;
     }
     
