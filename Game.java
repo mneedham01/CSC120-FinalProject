@@ -103,12 +103,36 @@ public class Game {
             }
 
             if (!acceptable){
-                System.out.println("This is not an accpetable responses. You can say 'GOAL','START', '1', '2', '3', or '4'.");
+                System.out.println("This is not an acceptable responses. You can say 'GOAL','START', '1', '2', '3', or '4'.");
             }
+
+            if(userResponse.equals("goal")||userResponse.equals("GOAL")||userResponse.equals("Goal")||userResponse.equals("goal ")||userResponse.equals("GOAL ")||userResponse.equals("Goal ")){
+                this.goalFile.printAudio();
+            }
+
+            if(userResponse.equals("start")||userResponse.equals("START")||userResponse.equals("Start")||userResponse.equals("start ")||userResponse.equals("START ")||userResponse.equals("Start ")){
+                this.goalFile.printAudio();
+            }
+
 
             if(userResponse.equals("1")){
                 playbackRateWitch playback=new playbackRateWitch();
                 playback.test();
+            }
+
+            if(userResponse.equals("2")){
+                pitchWitch pitch=new pitchWitch();
+                pitch.test();
+            }
+
+            if(userResponse.equals("3")){
+                reverbWitch reverb=new reverbWitch();
+                reverb.test();
+            }
+
+            if(userResponse.equals("4")){
+                eqWitch eq=new eqWitch();
+                eq.test();
             }
 
 
