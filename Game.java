@@ -7,12 +7,23 @@ public class Game {
     Scanner in;
     ArrayList<Audio> goalFiles = new ArrayList<Audio>();
     Audio goalFile;
+    String goalFileName;
+    Integer goalPlaybackRate;
+    Integer goalPitch;
+    Integer goalReverb; 
+    Integer goalEQ;
+    Audio startFile;
     Random rand = new Random();
-    int num=rand.nextInt(10);
 
     //constructor 
     public Game(){
         this.goalFile=pickGoalFile();
+        this.goalFileName=this.goalFile.fileName;
+        this.goalPlaybackRate=this.goalFile.playbackRate;
+        this.goalPitch=this.goalFile.pitch;
+        this.goalReverb=this.goalFile.reverb;
+        this.goalEQ=this.goalFile.EQ;
+        this.startFile=new Audio(goalFileName, 0,0,0,0);
     }
 
     //method to randomly pick a goal audio file
@@ -42,9 +53,58 @@ public class Game {
         int num=rand.nextInt(9);
         return goalFiles.get(num);
     }
-    public static void main(String args[]){
-        Game newGame=new Game();
-        System.out.println(newGame.goalFile);
-        newGame.goalFile.printAudio();
+    
+    public Boolean match(){
+        if (this.goalFile.playbackRate==this.startFile.playbackRate && this.goalFile.pitch==this.startFile.pitch && this.goalFile.reverb==this.startFile.reverb && this.goalFile.EQ==this.startFile.EQ){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
+
+    public void play(){
+        System.out.println("\nWelcome to the game.");
+        System.out.println("This is your goal audio file: \n"+this.goalFile.toString()+"\n");
+        System.out.println("This is what the audio file currently sounds like:\n"+this.startFile.toString()+"\n");
+        System.out.println("Your objective is to get your current audio file (played anytime by typing 'CURRENT') to match your goal audio file (played anytime by typing 'GOAL').");
+
+        //start scanner
+        in=new Scanner(System.in);
+
+        while(!this.match()){
+
+            String userResponse=in.nextLine();
+
+            ArrayList<String> acceptableResponses = new ArrayList<String>();
+
+            acceptableResponses.add("goal");
+            acceptableResponses.add("GOAL");
+            acceptableResponses.add("goal ");
+            acceptableResponses.add("GOAL ");
+            acceptableResponses.add("start");
+            acceptableResponses.add("START");
+            acceptableResponses.add("start ");
+            acceptableResponses.add("START ");
+            acceptableResponses.add("1");
+            acceptableResponses.add("2");
+            acceptableResponses.add("3");
+            acceptableResponses.add("4");
+
+            Boolean acceptable= false;
+            for (int i=0; i<acceptableResponses.size(); i++){
+                if (userResponse.equals(acceptableResponses.get(i))){
+                    acceptable=true;
+                }
+            }
+
+            if (!acceptable){
+                throw new RuntimeException("This is not an accpetable responses. You can say 'GOAL','START', '1', '2', '3', or '4'.");
+            }
+
+            
+        }
+
+    }
+    
 }
