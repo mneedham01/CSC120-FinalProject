@@ -26,7 +26,7 @@ public class playbackRateWitch {
                 done=true;
             }
 
-            Integer num = Integer.parseInt(userResponse);
+            double num = Double.parseDouble(userResponse);
 
             startFile.changePlaybackRate(num);
             startFile.printAudio();
