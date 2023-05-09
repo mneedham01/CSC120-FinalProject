@@ -1,6 +1,14 @@
+  /*
+ * Main class to run the game 
+    */
 public class Main {
-    public static void main(String args[]){
-        Game newGame=new Game();
-        newGame.play();
+    /*
+     * Main method to start the game 
+     */
+    public static void main(String[] args) {
+        Game game=new Game();
+
+        game.play();
+
     }
 }
